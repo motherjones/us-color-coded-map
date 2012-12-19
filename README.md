@@ -3,6 +3,12 @@ dead_simple_svg_map
 
 This is about as generalized and basic that I can make an implementation of an svg map setup that has classes and tooltips based on a google spreadsheet.
 
+Ideally, this means that the only thing that our reporters need to make an interactive svg map is an understanding of css for svgs
+
+TODO: write a css file so that our reporters don't need to know the basics of css for svgs.
+
+HOW TO DO IT
+
 Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go.
 
 This assumes your spreadsheet has the following columns:
