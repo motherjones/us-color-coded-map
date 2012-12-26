@@ -34,7 +34,7 @@ Stage it!
 Find your google spreadsheet's key. Check out the url at the top of the browser when you're looking at your google spreadsheet. It should look something like `https://docs.google.com/spreadsheet/ccc?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc#gid=0` The important part is between the `key=` and the `#gid=`
 
 This part is your spreadsheet's key. 
-https://docs.google.com/spreadsheet/ccc?key=<em>0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc</em>#gid=0
+`https://docs.google.com/spreadsheet/ccc?key=`<em>0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc</em>`#gid=0`
 
 Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go, locally at least.
 
