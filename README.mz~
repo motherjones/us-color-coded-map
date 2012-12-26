@@ -36,39 +36,13 @@ Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one 
 
 [Demo spreadsheet](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html)
 
-### 2) Set up your html page
+### 2) Set up your index.html page
 
-If you're in the super simple svg repo's directory, you can just paste this somewhere, and replace `YOUR KEY GOES HERE!!!! !!! 111 one eleven` with your spreadsheet url.
+Before you put this somewhere, you should probably place jQuery and tabletop somewhere and change the links to point to their new home, and maybe write your own css.
 
-```
-<div id="map_container">
-    <div id="tooltip_area">
-        <h1 id="tooltip_headline">Headline here will be automagically replaced w/ tooltip title</h1>
-        <p id="tooltip_body">Paragraph here will be automagically replaced w/ tooltip text</p>
-    </div>
-</div>
+###Styling tips
 
-<link href="css/style.css" rel="stylesheet" />
-<script src="libs/jquery.js"></script>
-<script src="libs/tabletop.js"></script>	
-<script src="js/map_snippet.js"></script>	
-<script>
-    Tabletop.init({ 
-        key: "YOUR KEY GOES HERE!!!! !!! 111 one eleven",
-        callback: function(data) {
-			color_map(data);
-			place_tooltips(data);
-        },
-        simpleSheet: true
-    });
-</script>
-```
-
-If you want to put this somewhere for real though, you'll have to replace jQuery and tabletop links with links to point to their new home, and maybe write your own css.
-
-### 3) Style it
-
-The exciting part, of course is going to be the classes you add. Remember that since the states are svg paths, you use "fill" instead of "background", and "stroke" instead of "border".
+The exciting part, of course is going to be the classes you add. Remember that since it's an svg, that you use "fill" instead of "background", and "stroke" instead of "border".
 
 Beyond that, the important parts are :
 
