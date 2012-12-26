@@ -1,0 +1,75 @@
+/* start main body */
+#map_container {
+    
+    font-family: verdana;
+    text-align: center;
+    margin: 0 auto;
+    color: #393939;
+
+}
+/* end main body */
+
+/* start header */
+#map_container h1 {
+    
+    font-size: 1.2em;
+}
+/* end header */
+
+
+/* start map footer */
+
+#map_container #tooltip_headline {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#map_container #tooltip_body {
+    font-size: .8em;
+    display: inline-block;
+    text-align: left;
+    line-height: 17px;
+    width: 60%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* end map footer */
+
+/* start fade */
+#map_container .fade-out {
+    opacity : 0;
+    transition-property : opacity; 
+    transition-duration : 0.3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+}
+
+#map_container .fade-in {
+    opacity : 1;
+    transition-property : opacity; 
+    transition-duration : 0.3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+}
+
+#map_container path:hover, #map_container path:active {
+    fill: #000000!important;
+}
+/* end fade */
+
+
+#map_container .clickable {
+    cursor: pointer;
+}
+
+#map_container .selected {
+    fill: #CBC9E2;
+}
+
+#party_breakdown img {
+    max-width: 80%;
+
+}
