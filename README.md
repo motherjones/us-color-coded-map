@@ -31,11 +31,11 @@ The exciting part, of course is going to be the classes you add. Remember that s
 
 Beyond that, the important parts are :
 
-* #tooltipheadline : The headline that you pass in.
+* \#tooltipheadline : The headline that you pass in.
 
-* #tooltipbody : The body that you pass in.
+* \#tooltipbody : The body that you pass in.
 
-* #map_container path : all the states
+* \#map_container path : all the states
 
 * .clickable : Every state that has information attached to it.  Consider making the cursor a pointer for these.
 
