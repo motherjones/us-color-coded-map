@@ -1,14 +1,14 @@
 # Super Simple SVG Map
 
-This is about as generalized and basic that I can make an implementation of an svg map setup that has classes and tooltips based on a google spreadsheet.
+## Spreadsheets to Maps!
 
-Ideally, this means that the only thing that our reporters need to make an interactive svg map is an understanding of css for svgs
+A simple way to make a svg map that displays data in a Google spreadsheet, complete with classes and tooltips. This enables anyone in our newsroom who knows spreadsheets and a tiny bit of CSS to whip up a sleek, interactive map, and make changes to it without a whole lot of heavy lifting on our part.
 
-###To Do: 
+Here's what it looks like:
 
-Write a css file so that our reporters don't need to know the basics of css for svgs.
+[Demo]()
 
-# How to do it :
+## Getting started: 
 
 ### 1) Get your spreadsheet together
 
@@ -26,19 +26,19 @@ The columns we care about are as follows:
 
 * class : the class you'd like attached to your state, for styling
 
-You can have other columns in there if you'd like, but they're not gonna do anything.
+You can have other columns in there if you'd like. They won't show up in the map, but they won't break it either.
 
 In Google Docs, go up to the `File` menu and pick `Publish to the web`. Fiddle with whatever you want, then click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc&output=html`
 
 Copy that! In theory you're interested in the part between `key=` and `&` but you can use the whole thing if you want.
 
-Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go, locally at least.
+Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go.
 
 [Demo spreadsheet](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html)
 
 ### 2) Set up your html page
 
-If you're in the super simple svg repo's directory, you can just paste this somewhere, and replace `YOUR KEY GOES HERE!!!! !!! 111 one eleven` with your spreadsheet url.
+If you're working locally and inside the super simple svg repo's directory, you can just paste the below code snippet into your web page, and replace `YOUR KEY GOES HERE!!!! !!! 111 one eleven` with your spreadsheet url.
 
 ```
 <div id="map_container">
@@ -64,11 +64,17 @@ If you're in the super simple svg repo's directory, you can just paste this some
 </script>
 ```
 
-If you want to put this somewhere for real though, you'll have to replace jQuery and tabletop links with links to point to their new home, and maybe write your own css.
+If you are working in a new directory, make sure the jQuery and tabletop links are pointing to the correct location.
 
-### 3) Style it
+Et voila! You have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes. Neat, huh? 
 
-The exciting part, of course is going to be the classes you add. Remember that since the states are svg paths, you use "fill" instead of "background", and "stroke" instead of "border".
+Now you can add some bells and whistles, like color, tooltips, hover states, transitions.
+
+### 3) Style your Super Simple SVG Map
+
+The exciting part, of course is going to be the classes you add. 
+
+REMEMBER: Since the states are svg paths, use "fill" instead of "background", and "stroke" instead of "border".
 
 Beyond that, the important parts are :
 
@@ -81,3 +87,17 @@ Beyond that, the important parts are :
 * .clickable : Every state that has information attached to it.  Consider making the cursor a pointer for these.
 
 * .selected : The state that was clicked on most recently, and the state who's headline and body you're currently displaying
+
+
+## Super Simple SVG Map in the wild
+
+A [series of maps documenting](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) solitary confinement laws in the US by state, with tooltips and style.
+
+
+## Credits
+
+[Ben Breedlove](http://twitter.com/bdbreedlove) built it.
+
+[Jaeah Lee](http://twitter.com/jaeahjlee) added the [bells and whistles]().
+
+[Tasneem Raja](http://twitter.com/tasneemraja), who headbangs to Fleetwood Mac _Rhiannon_ while writing documentation, edited it.
