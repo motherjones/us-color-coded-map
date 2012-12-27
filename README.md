@@ -32,8 +32,6 @@ In Google Docs, go up to the `File` menu and pick `Publish to the web`. Fiddle w
 
 Copy that! In theory you're interested in the part between `key=` and `&` but you can use the whole thing if you want.
 
-Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go, locally at least.
-
 [Demo spreadsheet](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html)
 
 ### 2) Set up your html page
