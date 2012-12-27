@@ -1,0 +1,26 @@
+<div id="map_container">
+    <div id="tooltip_area">
+        <h1 id="tooltip_headline">Headline here will be automagically replaced w/ tooltip title</h1>
+        <p id="tooltip_body">Paragraph here will be automagically replaced w/ tooltip text</p>
+    </div>
+</div>
+
+<link href="css/style.css" rel="stylesheet" />
+<script src="libs/jquery.js"></script>
+<script src="libs/tabletop.js"></script>	
+<script src="js/map_snippet.js"></script>	
+<script>
+    Tabletop.init({ 
+        key: "YOUR KEY GOES HERE!!!! !!! 111 one eleven",
+        // This is a key for a quick demo. Only CA and TX do anything
+        //key: "https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html",
+        postProcess: function(element) {
+       //     delete element["rowNumber"];
+        },  
+        callback: function(data) {
+			color_map(data);
+			place_tooltips(data);
+        },
+        simpleSheet: true
+    });
+</script>
