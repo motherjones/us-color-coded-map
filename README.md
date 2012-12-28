@@ -2,11 +2,11 @@
 
 ## Spreadsheets to Maps!
 
-A simple way to make a svg map that displays data in a Google spreadsheet, complete with classes and tooltips. This enables anyone in our newsroom who knows spreadsheets and a tiny bit of CSS to whip up a sleek, interactive map, and make changes to it without a whole lot of heavy lifting on our part.
+A simple way to make a svg map that displays data in a Google spreadsheet, complete with classes and info boxes. This enables anyone in our newsroom who knows spreadsheets and a tiny bit of CSS to whip up a sleek, interactive map, and make changes to it without a whole lot of heavy lifting on our part.
 
-Here's what it looks like:
+We've made a barebones version of the map available for download so you can [add styling](https://github.com/motherjones/super-simple-svg-map-from-spreadsheet#3-style-your-super-simple-svg-map) as desired. Here's an example of a Super Simple SVG Map with styling:
 
-[Demo]()
+[Demo](http://motherjones.github.com/super-simple-svg-map-from-spreadsheet/)
 
 ## Getting started: 
 
@@ -14,15 +14,15 @@ Here's what it looks like:
 
 Start a new Google Spreadsheet with the following column headers:
 
-    abbr     tooltip headline   tooltip body   class
+    abbr   headline   body   class
 
 The columns we care about are as follows:
 
-* abbr : The abbreviation of the state you want to add a class or tooltip to
+* abbr : The abbreviation of the state you want to add a class or info box to
 
-* tooltipheadline : The headline of your tooltip for that state
+* headline : The headline of your info box for that state, displayed under the map
 
-* tooltipbody : The body of your tooltip for that state
+* body : The body of your info box for that state, displayed under the headline
 
 * class : the class you'd like attached to your state, for styling
 
@@ -42,9 +42,9 @@ If you're working locally and inside the super simple svg repo's directory, you 
 
 ```
 <div id="map_container">
-    <div id="tooltip_area">
-        <h1 id="tooltip_headline">Headline here will be automagically replaced w/ tooltip title</h1>
-        <p id="tooltip_body">Paragraph here will be automagically replaced w/ tooltip text</p>
+    <div id="state_specific_area">
+        <h1 id="state_specific_headline">Headline here will be automatically replaced w/ info box title</h1>
+        <p id="state_specific_body">Paragraph here will be automatically replaced w/ info box text</p>
     </div>
 </div>
 
@@ -57,7 +57,7 @@ If you're working locally and inside the super simple svg repo's directory, you 
         key: "YOUR KEY GOES HERE!!!! !!! 111 one eleven",
         callback: function(data) {
 			color_map(data);
-			place_tooltips(data);
+			place_state_specific_data(data);
         },
         simpleSheet: true
     });
@@ -68,7 +68,7 @@ If you are working in a new directory, make sure the jQuery and tabletop links a
 
 Et voila! You have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes. Neat, huh? 
 
-Now you can add some bells and whistles, like color, tooltips, hover states, transitions.
+Now you can add some bells and whistles to the map and info boxes, such as color fills, hover states, and transitions.
 
 ### 3) Style your Super Simple SVG Map
 
@@ -78,9 +78,9 @@ REMEMBER: Since the states are svg paths, use "fill" instead of "background", an
 
 Beyond that, the important parts are :
 
-* \#tooltipheadline : The headline that you pass in.
+* \#state_specific_headline : The headline that you pass in.
 
-* \#tooltipbody : The body that you pass in.
+* \#state_specific_body : The body that you pass in.
 
 * \#map_container path : all the states
 
@@ -91,13 +91,13 @@ Beyond that, the important parts are :
 
 ## Super Simple SVG Map in the wild
 
-A [series of maps documenting](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) solitary confinement laws in the US by state, with tooltips and style.
+A [series of maps documenting](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) solitary confinement laws in the US by state, with info boxes and style.
 
 
 ## Credits
 
 [Ben Breedlove](http://twitter.com/bdbreedlove) built it.
 
-[Jaeah Lee](http://twitter.com/jaeahjlee) added the [bells and whistles]().
+[Jaeah Lee](http://twitter.com/jaeahjlee) added the [bells and whistles](https://github.com/motherjones/super-simple-svg-map-from-spreadsheet#3-style-your-super-simple-svg-map).
 
 [Tasneem Raja](http://twitter.com/tasneemraja), who headbangs to Fleetwood Mac _Rhiannon_ while writing documentation, edited it.
