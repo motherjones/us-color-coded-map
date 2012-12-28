@@ -6,6 +6,25 @@
 }
 /* end main body */
 
+/* start map */
+
+.one {
+	fill: #5AB4AC;
+	opacity: .7;		
+	transition: fill 0.3s ease-in-out;
+	-moz-transition: fill .3s ease-in-out;
+	-webkit-transition: fill .3s ease-in-out;
+}
+
+.two {
+	fill: #D8B365;	
+	opacity: .7;
+	transition: fill 0.3s ease-in-out;
+	-moz-transition: fill .3s ease-in-out;
+	-webkit-transition: fill .3s ease-in-out;
+}
+
+/* end map */
 
 /* start map footer */
 
@@ -44,7 +63,7 @@
 }
 
 #map_container path:hover, #map_container path:active {
-    fill: #000000!important;
+	opacity: 1;
 }
 /* end fade */
 
@@ -54,5 +73,5 @@
 }
 
 #map_container .selected {
-    fill: #CBC9E2;
+    fill: #232323;
 }
