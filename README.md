@@ -95,6 +95,8 @@ Beyond that, the important parts are :
 
 A [series of maps documenting](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) solitary confinement laws in the US by state, with info boxes and style.
 
+A [map](http://www.motherjones.com/blue-marble/2013/06/ag-gag-laws-map) showing states where it's becoming more difficult for activists and journalists to investigate and report animal abuses.
+
 
 ## Credits
 
