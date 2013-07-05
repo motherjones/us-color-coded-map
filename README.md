@@ -28,17 +28,19 @@ The columns we care about are as follows:
 
 You can have other columns in there if you'd like. They won't show up in the map, but they won't break it either.
 
-In Google Docs, go up to the `File` menu and pick `Publish to the web`. Fiddle with whatever you want, then click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc&output=html`
+In Google Docs, go up to the `File` menu and pick `Publish to the web`. Before publishing your map, double check that you are publishing the correct sheet in the "Sheets to Publish" drop down menu. Make sure there is only one worksheet powering your map. 
 
-Copy that! In theory you're interested in the part between `key=` and `&` but you can use the whole thing if you want.
+Click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc&output=html`
 
-Go in, change the spreadsheet id (currently "YOUR KEY GOES HERE!!!! !!! 111 one eleven") to your google spreadsheet id, and you should be good to go.
+Copy the part between `key=` and `&`. This is your spreadsheet key.
+
+In the code snippet below, change the spreadsheet id (currently "YOUR KEY GOES HERE") to your Google spreadsheet key.
 
 [Demo spreadsheet](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html)
 
 ### 2) Set up your html page
 
-If you're working locally and inside the super simple svg repo's directory, you can just paste the below code snippet into your web page, and replace `YOUR KEY GOES HERE!!!! !!! 111 one eleven` with your spreadsheet url.
+If you're working locally and inside the super simple svg repo's directory, you can just paste the below code snippet into your web page, and replace 'YOUR KEY GOES HERE' with your spreadsheet key.
 
 ```
 <div id="map_container">
@@ -54,7 +56,7 @@ If you're working locally and inside the super simple svg repo's directory, you 
 <script src="js/map_snippet.js"></script>	
 <script>
     Tabletop.init({ 
-        key: "YOUR KEY GOES HERE!!!! !!! 111 one eleven",
+        key: "YOUR KEY GOES HERE",
         callback: function(data) {
 			color_map(data);
 			place_state_specific_data(data);
