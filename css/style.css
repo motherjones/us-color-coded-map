@@ -44,15 +44,31 @@
 }
 
 #map_container path:hover, #map_container path:active {
-    fill: #000000!important;
+    opacity: .5;
 }
 /* end fade */
 
+#map_container .selected {
+
+opacity: .5;
+
+}
 
 #map_container .clickable {
     cursor: pointer;
 }
 
-#map_container .selected {
-    fill: #CBC9E2;
+#map_container .Legal {
+	
+	fill:#7fbf7b;
+}
+
+#map_container .Banned {
+	
+	fill:#af8dc3;
+}
+
+#map_container .Limbo {
+	
+	fill:#f7f7f7;
 }

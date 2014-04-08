@@ -18,7 +18,7 @@ Start a new Google Spreadsheet with the following column headers:
 
 The columns we care about are as follows:
 
-* abbr : The abbreviation of the state you want to add a class or info box to
+* abbr : The abbreviation of the state you want to add a class or info box to (make sure your state column has abbreviated state names, not full names)
 
 * headline : The headline of your info box for that state, displayed under the map
 
@@ -75,6 +75,14 @@ Now you can add some bells and whistles to the map and info boxes, such as color
 ### 3) Style your Super Simple SVG Map
 
 The exciting part, of course is going to be the classes you add. 
+
+To color your state shapes, open up the CSS file and make new classes based on the values in your Class column. Example:
+
+.map_container .Legal {
+	
+	fill:#7fbf7b;
+}
+
 
 REMEMBER: Since the states are svg paths, use "fill" instead of "background", and "stroke" instead of "border".
 
