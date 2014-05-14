@@ -1,32 +1,66 @@
-/* start main body */
+/* global */
 #map_container {
-    text-align: center;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     margin: 0 auto;
-
+    font-weight: inherit;
 }
-/* end main body */
+#map_container header, #map_container svg, #map_container section {
+    margin-bottom: 1em;
+}
+#map_container > header *, #map_container > section * {
+    margin: 0em;
+    margin-bottom: .2em;
+}
 
+/* header and legend */
 
-/* start map footer */
-
-#map_container #state_specific_headline {
-    text-transform: uppercase;
+#map_container h2 {
     font-weight: bold;
+}
+#map_container dl {
+    margin-top: .6em;
+    font-weight: lighter;
+}
+#map_container dt, #map_container dd {
+    display: inline;
+}
+#map_container dd {
+    padding-right: 1em;
+}
+
+
+/* map interaction styling */
+#map_container .selected {
+opacity: .5;
+}
+#map_container .clickable {
+    cursor: pointer;
+}
+
+
+
+/* tooltips */
+#map_container #state_specific_area {
+    width:40%;
+    margin: 0 auto;
+    min-height: 7em;
     text-align: center;
-    margin-bottom: 5px;
+    background: #f7f7f7;
+    padding: 1em;
 }
-
+#map_container #state_specific_headline {
+}
 #map_container #state_specific_body {
-    display: inline-block;
-    text-align: left;
-    width: 60%;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
 }
 
-/* end map footer */
 
-/* start fade */
+/* sourceline */
+#map_container aside {
+    font-size: .8em;
+}
+
+
+/* fade */
 #map_container .fade-out {
     opacity : 0;
     transition-property : opacity; 
@@ -34,7 +68,6 @@
     -moz-transition: opacity .3s ease-in-out;
     -webkit-transition: opacity .3s ease-in-out;
 }
-
 #map_container .fade-in {
     opacity : 1;
     transition-property : opacity; 
@@ -42,33 +75,25 @@
     -moz-transition: opacity .3s ease-in-out;
     -webkit-transition: opacity .3s ease-in-out;
 }
-
 #map_container path:hover, #map_container path:active {
     opacity: .5;
 }
-/* end fade */
 
-#map_container .selected {
 
-opacity: .5;
 
-}
-
-#map_container .clickable {
-    cursor: pointer;
-}
-
-#map_container .Legal {
-	
+/*  project-specific styles */
+#map_container .Legal {	
 	fill:#7fbf7b;
+    background:#7fbf7b;
+    color: #7fbf7b;
 }
-
 #map_container .Banned {
-	
 	fill:#af8dc3;
+    background:#af8dc3;
+    color:#af8dc3;
 }
-
-#map_container .Limbo {
-	
-	fill:#f7f7f7;
+#map_container .Limbo {	
+	fill:#e6e6e6;
+    background:#e6e6e6;
+    color:#e6e6e6;
 }
