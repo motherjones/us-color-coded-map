@@ -1,26 +1,21 @@
-/* map container */
+/* global */
 #map_container {
     margin: 0 auto;
-
 }
-
-/* header */
 #map_container header, #map_container svg, #map_container section {
     margin-bottom: 2em;
 }
-
 #map_container > header *, #map_container > section * {
     margin: 0em;
+    margin-bottom: .5em;
 }
 
+/* header and legend */
 #map_container dl {
-
 }
-
 #map_container dt, #map_container dd {
     display: inline;
 }
-
 #map_container dd {
     padding-right: 1em;
 }
@@ -45,14 +40,16 @@ opacity: .5;
     background: #f7f7f7;
     padding: 1em;
 }
-
 #map_container #state_specific_headline {
-
 }
 #map_container #state_specific_body {
-
 }
 
+
+/* sourceline */
+#map_container aside {
+    font-size: .8em;
+}
 
 
 /* fade */
@@ -88,7 +85,7 @@ opacity: .5;
     color:#af8dc3;
 }
 #map_container .Limbo {	
-	fill:#f7f7f7;
-    background:#f7f7f7;
-    color:#f7f7f7;
+	fill:#e6e6e6;
+    background:#e6e6e6;
+    color:#e6e6e6;
 }
