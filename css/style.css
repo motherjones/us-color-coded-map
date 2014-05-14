@@ -1,17 +1,24 @@
 /* global */
 #map_container {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     margin: 0 auto;
+    font-weight: inherit;
 }
 #map_container header, #map_container svg, #map_container section {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 #map_container > header *, #map_container > section * {
     margin: 0em;
-    margin-bottom: .5em;
+    margin-bottom: .2em;
 }
 
 /* header and legend */
+
+#map_container h2 {
+    font-weight: bold;
+}
 #map_container dl {
+    margin-top: .6em;
 }
 #map_container dt, #map_container dd {
     display: inline;
