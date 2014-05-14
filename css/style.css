@@ -19,6 +19,7 @@
 }
 #map_container dl {
     margin-top: .6em;
+    font-weight: lighter;
 }
 #map_container dt, #map_container dd {
     display: inline;
@@ -42,7 +43,7 @@ opacity: .5;
 #map_container #state_specific_area {
     width:40%;
     margin: 0 auto;
-    min-height: 5em;
+    min-height: 7em;
     text-align: center;
     background: #f7f7f7;
     padding: 1em;
