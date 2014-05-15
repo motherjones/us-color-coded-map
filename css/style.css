@@ -12,8 +12,12 @@
     margin-bottom: .2em;
 }
 
-/* header and legend */
+/* map */
+#map_container svg {
+    width: 100%;
+}
 
+/* header and legend */
 #map_container h2 {
     font-weight: bold;
 }
@@ -83,17 +87,22 @@ opacity: .5;
 
 /*  project-specific styles */
 #map_container .Legal {	
-	fill:#7fbf7b;
-    background:#7fbf7b;
-    color: #7fbf7b;
+	fill:#69A9C5;
+    background:#69A9C5;
+    color: #69A9C5;
 }
 #map_container .Banned {
-	fill:#af8dc3;
-    background:#af8dc3;
-    color:#af8dc3;
+	fill: #F4A582;
+    background:#F4A582;
+    color:#F4A582;
 }
 #map_container .Limbo {	
-	fill:#e6e6e6;
-    background:#e6e6e6;
-    color:#e6e6e6;
+	fill:#ABD9E9;
+    background:#ABD9E9;
+    color:#ABD9E9;
+}
+#map_container .Bannedstrong { 
+    fill:#D6604D;
+    background:#D6604D;
+    color:#D6604D;
 }
