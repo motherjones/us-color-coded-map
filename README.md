@@ -45,8 +45,6 @@ If you're working locally and inside the super simple svg repo's directory, you 
 ```
 <div id="map_container">
     <div id="state_specific_area">
-        <h1 id="state_specific_headline">Headline here will be automatically replaced w/ info box title</h1>
-        <p id="state_specific_body">Paragraph here will be automatically replaced w/ info box text</p>
     </div>
 </div>
 
@@ -55,14 +53,12 @@ If you're working locally and inside the super simple svg repo's directory, you 
 <script src="libs/tabletop.js"></script>	
 <script src="js/map_snippet.js"></script>	
 <script>
-    Tabletop.init({ 
-        key: "YOUR KEY GOES HERE",
-        callback: function(data) {
-			color_map(data);
-			place_state_specific_data(data);
-        },
-        simpleSheet: true
-    });
+    super_simple_map({
+      container: 'state_specific_area', //This should match  the ide of the section up there
+      initial_state: 'CA', //if you want to have a state initially selected
+      //proxy: proxy here, //for a tabletop proxy, if you have one
+      key: 'https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html',
+    })
 </script>
 ```
 
