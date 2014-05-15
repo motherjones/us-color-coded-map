@@ -15,8 +15,6 @@
         </dl>
     </header>
     <section id="state_specific_area">
-        <h3 id="state_specific_headline">Headline here will be automagically replaced w/ state specific title</h3>
-        <p id="state_specific_body">Paragraph here will be automagically replaced w/ state specific text</p>
     </section>  
     <section>
         <aside>
@@ -33,17 +31,10 @@
 <script src="js/simple-svg-map.js"></script>	
 
 <script>
-    Tabletop.init({ 
-        //key: "YOUR KEY GOES HERE!!!! !!! 111 one eleven",
-        // This is a key for a quick demo. Only CA and TX do anything
-        key: "https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html",
-        postProcess: function(element) {
-       //     delete element["rowNumber"];
-        },  
-        callback: function(data) {
-			color_map(data);
-			place_state_specific_data(data);
-        },
-        simpleSheet: true
-    });
+    super_simple_map({
+      container: 'state_specific_area',
+      initial_state: 'CA',
+      //proxy: proxy here,
+      key: 'https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html',
+    })
 </script>
