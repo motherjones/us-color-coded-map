@@ -1,52 +1,70 @@
-/* start main body */
+/* global */
 #map_container {
-    text-align: center;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
     margin: 0 auto;
-	font-family: verdana;
-
+    font-weight: inherit;
 }
-/* end main body */
-
-/* start map */
-
-.one {
-	fill: #5AB4AC;
-	opacity: .7;		
-	transition: fill 0.3s ease-in-out;
-	-moz-transition: fill .3s ease-in-out;
-	-webkit-transition: fill .3s ease-in-out;
+#map_container header, #map_container svg, #map_container section {
+    margin-bottom: 1em;
+}
+#map_container > header *, #map_container > section * {
+    margin: 0em;
+    margin-bottom: .2em;
 }
 
-.two {
-	fill: #D8B365;	
-	opacity: .7;
-	transition: fill 0.3s ease-in-out;
-	-moz-transition: fill .3s ease-in-out;
-	-webkit-transition: fill .3s ease-in-out;
+/* map */
+#map_container svg {
+    width: 100%;
 }
 
-/* end map */
-
-/* start map footer */
-
-#map_container #state_specific_headline {
-    text-transform: uppercase;
+/* header and legend */
+#map_container h2 {
     font-weight: bold;
+}
+#map_container dl {
+    margin-top: .6em;
+    font-weight: lighter;
+}
+#map_container dt, #map_container dd {
+    display: inline;
+}
+#map_container dd {
+    padding-right: 1em;
+}
+
+
+/* map interaction styling */
+#map_container .selected {
+opacity: .5;
+}
+#map_container .clickable {
+    cursor: pointer;
+}
+
+
+
+/* tooltips */
+#map_container #state_specific_area {
+    width:40%;
+    margin: 0 auto;
+    min-height: 7em;
     text-align: center;
-    margin-bottom: 5px;
+    background: #f7f7f7;
+    padding: 1em;
 }
-
+#map_container #state_specific_headline {
+}
 #map_container #state_specific_body {
-    display: inline-block;
-    text-align: left;
-    width: 60%;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
 }
 
-/* end map footer */
 
-/* start fade */
+/* sourceline */
+#map_container aside {
+    font-size: .8em;
+}
+
+
+/* fade */
 #map_container .fade-out {
     opacity : 0;
     transition-property : opacity; 
@@ -54,7 +72,6 @@
     -moz-transition: opacity .3s ease-in-out;
     -webkit-transition: opacity .3s ease-in-out;
 }
-
 #map_container .fade-in {
     opacity : 1;
     transition-property : opacity; 
@@ -62,17 +79,30 @@
     -moz-transition: opacity .3s ease-in-out;
     -webkit-transition: opacity .3s ease-in-out;
 }
-
 #map_container path:hover, #map_container path:active {
-	opacity: 1;
-}
-/* end fade */
-
-
-#map_container .clickable {
-    cursor: pointer;
+    opacity: .5;
 }
 
-#map_container .selected {
-    fill: #232323;
+
+
+/*  project-specific styles */
+#map_container .Legal {	
+	fill:#69A9C5;
+    background:#69A9C5;
+    color: #69A9C5;
+}
+#map_container .Banned {
+	fill: #F4A582;
+    background:#F4A582;
+    color:#F4A582;
+}
+#map_container .Limbo {	
+	fill:#ABD9E9;
+    background:#ABD9E9;
+    color:#ABD9E9;
+}
+#map_container .Bannedstrong { 
+    fill:#D6604D;
+    background:#D6604D;
+    color:#D6604D;
 }
