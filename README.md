@@ -4,9 +4,9 @@
 
 A simple way to make a svg map that displays data in a Google spreadsheet, complete with classes and info boxes. This enables anyone in our newsroom who knows spreadsheets and a tiny bit of CSS to whip up a sleek, interactive map, and make changes to it without a whole lot of heavy lifting on our part.
 
-We've made a barebones version of the map available for download so you can [add styling](https://github.com/motherjones/super-simple-svg-map-from-spreadsheet#3-style-your-super-simple-svg-map) as desired. Here's an example of a Super Simple SVG Map with styling:
+We've made a barebones version of the map available for download so you can [add styling](https://github.com/motherjones/spreadsheet-to-svg#3-style-your-super-simple-svg-map) as desired. Here's an example of a Super Simple SVG Map with styling:
 
-[Demo](http://motherjones.github.com/super-simple-svg-map-from-spreadsheet/)
+[Demo](http://motherjones.github.io/spreadsheet-to-svg/)
 
 ## Getting started: 
 
@@ -54,7 +54,7 @@ If you're working locally and inside the super simple svg repo's directory, you 
 <script src="js/map_snippet.js"></script>	
 <script>
     super_simple_map({
-      container: 'state_specific_area', //This should match  the ide of the section up there
+      container: 'state_specific_area', //This should match  the id of the section up there
       initial_state: 'CA', //if you want to have a state initially selected
       //proxy: proxy here, //for a tabletop proxy, if you have one
       key: 'https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html',
