@@ -26,7 +26,7 @@
     font-weight: lighter;
 }
 #map_container dt, #map_container dd {
-    display: inline;
+    display: initial;
 }
 #map_container dd {
     padding-right: 1em;
@@ -45,22 +45,15 @@ opacity: .5;
 
 /* tooltips */
 #map_container #state_specific_area {
-    width:40%;
     margin: 0 auto;
-    min-height: 7em;
-    text-align: center;
     background: #f7f7f7;
     padding: 1em;
 }
-#map_container #state_specific_headline {
-}
-#map_container #state_specific_body {
-}
-
 
 /* sourceline */
 #map_container aside {
     font-size: .8em;
+    margin-top: .5em;
 }
 
 
