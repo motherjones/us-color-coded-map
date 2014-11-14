@@ -19,9 +19,8 @@ svg {
 
 /* tooltips */
 #state_specific_area {
-    margin: 0 auto;
     background: #f7f7f7;
-    padding: 1em;
+    padding: .5em;
 }
 
 
