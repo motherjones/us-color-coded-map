@@ -1,33 +1,29 @@
+<html>
+<head>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
 
-<div id="map_container">
-    <header>
-        <h2>Where is Gay Marriage Legal in the US?</h2>
-        <p>The most recent status of gay marriage, across the US. Latest state to legalize highlighted below. Click any state for details.</p>
-        <dl>
-            <dt class="Legal">item</dt>
-            <dd>Legal</dd>
-            <dt class="Limbo">item</dt>
-            <dd>In limbo</dd>
-            <dt class="Banned">item</dt>
-            <dd>Banned by court ruling or state law</dd>
-            <dt class="Bannedstrong">item</dt>
-            <dd>Banned by both</dd>
-        </dl>
-    </header>
+<div class="container-fluid">  
+    <h2>Where is Gay Marriage Legal in the US?</h2>
+    <p>The most recent status of gay marriage, across the US. Latest state to legalize highlighted below. Click any state for details.</p>
+
+    <ul class="list-inline">
+        <li><span class="Legal">tag</span> Legal</li>
+        <li><span class="Limbo">tag</span> In limbo</li>
+        <li><span class="Banned">tag</span> Banned by court ruling or state law</li>
+        <li><span class="Bannedstrong">tag</span> Banned by both</li>
+    </ul>
+        <aside class="small text-muted">
+        Source: Lambda Legal, Human Rights Campaign
+    </aside>
+    
     <section id="state_specific_area">
-    </section>  
-    <section>
-        <aside>
-            Source: Lambda Legal, Human Rights Campaign
-        </aside>
     </section>  
 </div>
 
-<link href="css/style.css" rel="stylesheet" />
-<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,800' rel='stylesheet' type='text/css'>
-
-<script src="libs/jquery.js"></script>
-<script src="libs/tabletop.js"></script>	
+<script src="js/jquery.js"></script>
+<script src="js/tabletop.js"></script>	
 <script src="js/simple-svg-map.js"></script>	
 
 <script>
@@ -38,3 +34,5 @@
       key: 'https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html',
     })
 </script>
+
+</html>
