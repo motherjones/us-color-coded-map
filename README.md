@@ -84,7 +84,7 @@ REMEMBER: Since the states are svg paths, use "fill" instead of "background", an
 
 Beyond that, the important parts are :
 
-* \#state_specific_headline : The headline that you pass in.
+* \#blurbHeadline : The headline that you pass in.
 
 * \#state_specific_body : The body that you pass in.
 
