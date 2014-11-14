@@ -1,8 +1,7 @@
-# Super Simple SVG Map
 
 ## Spreadsheets to Maps!
 
-A simple way to make a svg map that displays data in a Google spreadsheet, complete with classes and info boxes. This enables anyone in our newsroom who knows spreadsheets and a tiny bit of CSS to whip up a sleek, interactive map, and make changes to it without a whole lot of heavy lifting on our part.
+A simple way to make a US map with data from a Google spreadsheet, complete with classes and info boxes. 
 
 We've made a barebones version of the map available for download so you can [add styling](https://github.com/motherjones/spreadsheet-to-svg#3-style-your-super-simple-svg-map) as desired. Here's an example of a Super Simple SVG Map with styling:
 
