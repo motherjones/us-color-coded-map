@@ -1,15 +1,21 @@
+# A Google Spreadsheet-Powered SVG Map
 
-## Spreadsheets to Maps!
+Build a US map with tooltips using data from a Google spreadsheet, complete with classes and info boxes. This works well for stories comparing states or tracking state-level legislation. Here's an example from the wild:
 
-A simple way to make a US map with data from a Google spreadsheet, complete with classes and info boxes. 
+**screenshot here**
 
-We've made a barebones version of the map available for download so you can [add styling](https://github.com/motherjones/spreadsheet-to-svg#3-style-your-super-simple-svg-map) as desired. Here's an example of a Super Simple SVG Map with styling:
+## Examples in the wild
 
-[Demo](http://motherjones.github.io/spreadsheet-to-svg/)
+[Map: Which States Allow Gay Marriage?](www.motherjones.com/politics/2014/05/gay-marriage-states-legal-map)
 
-## Getting started: 
+[Maps: Solitary Confinement, State by State](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) 
 
-### 1) Get your spreadsheet together
+[Has Your State Outlawed Blowing the Whistle on Factory Farm Abuses?](http://www.motherjones.com/blue-marble/2013/06/ag-gag-laws-map)
+
+## How it works 
+
+
+## Set up your Google Spreadsheet
 
 Start a new Google Spreadsheet with the following column headers:
 
@@ -63,15 +69,13 @@ If you're working locally and inside the super simple svg repo's directory, you 
 
 If you are working in a new directory, make sure the jQuery and tabletop links are pointing to the correct location.
 
-Et voila! You have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes. Neat, huh? 
+Et voila! You have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes.
 
 Now you can add some bells and whistles to the map and info boxes, such as color fills, hover states, and transitions.
 
-### 3) Style your Super Simple SVG Map
+## Style your Super Simple SVG Map
 
-The exciting part, of course is going to be the classes you add. 
-
-To color your state shapes, open up the CSS file and make new classes based on the values in your Class column. Example:
+To color your state, open up the CSS file and make new classes based on the values in your Class column. Example:
 
 .map_container .Legal {
 	
@@ -79,7 +83,7 @@ To color your state shapes, open up the CSS file and make new classes based on t
 }
 
 
-REMEMBER: Since the states are svg paths, use "fill" instead of "background", and "stroke" instead of "border".
+Since the states are svg paths, use "fill" instead of "background", and "stroke" instead of "border".
 
 Beyond that, the important parts are :
 
@@ -93,18 +97,21 @@ Beyond that, the important parts are :
 
 * .selected : The state that was clicked on most recently, and the state who's headline and body you're currently displaying
 
+## Staging the prettylist (for MoJo users)
 
-## Super Simple SVG Map in the wild
+*MoJo users:* When you're done, upload to s3 and embed in the shell [(follow this how to)](https://github.com/motherjones/story-tools#starting-a-new-project).
 
-A [series of maps documenting](http://www.motherjones.com/politics/2012/10/map-solitary-confinement-states) solitary confinement laws in the US by state, with info boxes and style.
+## Questions?
 
-A [map](http://www.motherjones.com/blue-marble/2013/06/ag-gag-laws-map) showing states where it's becoming more difficult for activists and journalists to investigate and report animal abuses.
-
+Hit us up by email, or Twitter: [@jaeahjlee](https://twitter.com/jaeahjlee) or [@tasneemraja](https://twitter.com/tasneemraja)
 
 ## Credits
 
 [Ben Breedlove](http://twitter.com/bdbreedlove) built it.
 
-[Jaeah Lee](http://twitter.com/jaeahjlee) added the [bells and whistles](https://github.com/motherjones/super-simple-svg-map-from-spreadsheet#3-style-your-super-simple-svg-map).
+[Jaeah Lee](http://twitter.com/jaeahjlee) added the bells and whistles.
 
 [Tasneem Raja](http://twitter.com/tasneemraja), who headbangs to Fleetwood Mac _Rhiannon_ while writing documentation, edited it.
+
+## License
+Copyright (c) 2012 Mother Jones
