@@ -26,7 +26,7 @@ This map consists of a title, deck, legend, source line, svg map, and a tooltip 
 |---|----|-----|----|
 |  |    |     |    |
 
-* Add your details about each state in each row:
+* Add details about the states you're mapping in each row:
 
 |**abbr**|**headline**|**body**|**class**|
 |---|----|-----|----|
@@ -90,7 +90,7 @@ This map consists of a title, deck, legend, source line, svg map, and a tooltip 
  
 Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and move the copy into the relevant beat folder in the Mother Jones Google Drive. Rename the spreadsheet as you see fit. Change the owner of the spreadsheet to MoJo Data in `Share > Advanced`.
 
-In order for the slider to be able to read your spreadsheet, you'll need to make your new spreadsheet public. Go to `File` and click on `Publish to the web,` then click on `Start publishing`. 
+In order for the map to be able to read your spreadsheet, you'll need to make your new spreadsheet public. Go to `File` and click on `Publish to the web,` then click on `Start publishing`. 
 
 A URL will appear. It will look something like this: 
 
@@ -106,52 +106,82 @@ Copy that link. This is your spreadsheet ID or url, which you will use to connec
 
 * `headline` : The headline of your info box for that state, displayed under the map
 
-* `body` : The body of your info box for that state, displayed under the headline
+* `body` : The details for that state, displayed under the headline. (**Pro tip:** Keep the body word count consistent across all states.)
 
-* `class` : these should be single words that categorize each state, which will determine the color of each state shape and the boxes in the legend. In the demo, we have four categories under `class`: legal, appeal, challenged, banned. These classes 
+* `class` : Single words that categorize each state, which will determine the color of each state shape and the boxes in the legend. In the demo, we have four categories under `class`: legal, appeal, challenged, banned. These classes 
 
-It's best to keep your spreadsheet clean and limited to these four columns, but if you need, feel free to add additional columns for reference (sources for each row's data, and so on). They won't show up in the map, they won't break it either.
+It's best to keep your spreadsheet clean and limited to these four columns, but if you need, feel free to add additional columns for reference (sources for each row's data, and so on). They won't show up in the map, but they won't break it either.
 
 ## Modify your project files
 
-*MoJo users:* By now you should have a local clone of this project repo on your machine. If you don't, go back and follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).
+*MoJo users:* By now you should have a local copy of this project repository on your machine. If you don't, go back and follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).
 
-**In your copy of index.html (required):**
+**In your copy of index.html:**
 
-In order to get your data showing up in the slider, you'll need to edit a couple of lines of code in your index.html file. Paste the ID or url you just copied from your spreadsheet, and paste it in the place of public_spreadsheet_url. The code you are looking for in the index.html file looks like this:
+In order to get your data showing up in the map, you'll need to edit a couple of lines of code in your index.html file. 
 
-```
-
-$('#slideshow').slideshow('public_spreadsheet_url');
+* Paste the ID or url you just copied from your spreadsheet, and paste it in the place of `your_spreadsheet_url_here`. The code you are looking for in the index.html file looks like this:
 
 ```
+<script>
+    us_map ({
+      container: 'blurb',
+      initial_state: 'CA',
+      //proxy: proxy here,
+      key: 'your_spreadsheet_url_here',
+    })
+</script>
+```
+* Next, replace the headline, deck, and legend with your story content. This is the code you're looking for:
+```
+    <h2>Where is Gay Marriage Legal in the US?</h2>
+    <p>The most recent status of gay marriage, across the US. Latest state to legalize highlighted below. Click any state for details.</p>
 
-The code after your changes should look like this:
+    <ul class="list-inline">
+        <li><span class="Legal">tag</span> Legal</li>
+        <li><span class="Appeal">tag</span> Ban struck down, appeal pending</li>
+        <li><span class="Challenged">tag</span> Banned, currently challenged in court</li>
+        <li><span class="Banned">tag</span> Banned</li>
+    </ul>
+
+    <aside class="small text-muted">Source: Lambda Legal, Human Rights Campaign</aside>
+    
+    <section id="blurb"></section>  
+```
+Save your changes. Open up index.html using a web browser and check that your data is showing up in the map container. When you make changes to the spreadsheet data, the map will automatically render those changes.
+
+**In your copy of style.css:**
+
+Make sure the categories you added to the `class` column matches the .classes in your style.css file. `fill`, `background`, and `color` are CSS properties that assign each class its own color. Each of these properties should have a hex code (e.g. #69A9C5) that denotes the corresponding color for that class. If you've added more than four categories, make sure you add them here as well, along with their `fill`, `background`, and `color`.
 
 ```
-
-$('#slideshow').slideshow('0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc');
-
-```
-
-Save your changes. Open up index.html using a web browser and check that your data is showing up in the map container.
-
-Now you have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes.
-
-Customize Add some bells and whistles to the map and tooltip box, such as color fill, hover states, and transitions.
-
-## Style your Super Simple SVG Map
-
-To color your state, open up the CSS file and make new classes based on the values in your Class column. Example:
-
-.map_container .Legal {
-	
-	fill:#7fbf7b;
+/*  project-specific styles for map and legend */
+.Legal {	
+	fill:#69A9C5;
+    background:#69A9C5;
+    color: #69A9C5;
 }
+.Appeal {   
+    fill:#ABD9E9;
+    background:#ABD9E9;
+    color:#ABD9E9;
+}
+.Challenged {
+	fill: #F4A582;
+    background:#F4A582;
+    color:#F4A582;
+}
+.Banned { 
+    fill:#D6604D;
+    background:#D6604D;
+    color:#D6604D;
+}
+```
+**Important note about CSS for <svg>s:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are "fill" instead of "background", and "stroke" instead of "border."
 
-**Important note about CSS for <svg>s:** Since the state shapes are formed by svg paths, in the CSS you'll need to use "fill" instead of "background", and "stroke" instead of "border", to add color.
+Refresh index.html in the web browser and check that your data is still showing up in the map, colored properly, and has the new headline/deck/source.
 
-## Staging the map (for MoJo users)
+## Stage the map (for MoJo users)
 
 *MoJo users:* When you're done, upload to s3 and embed in the shell [(follow this how to)](https://github.com/motherjones/story-tools#starting-a-new-project).
 
