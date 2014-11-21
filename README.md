@@ -24,7 +24,6 @@ This map consists of a title, deck, legend, source line, svg map, and a tooltip 
 
 |**abbr**|**headline**|**body**|**class**|
 |---|----|-----|----|
-|  |    |     |    |
 
 * Add details about the states you're mapping in each row:
 
