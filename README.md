@@ -2,7 +2,9 @@
 
 Build a US map with tooltips using data from a Google spreadsheet, complete with classes and info boxes. This works well for stories comparing states or tracking state-level legislation. Here's an example from the wild:
 
-**screenshot here**
+<p align="center">
+  <img width="75%" src="https://github.com/motherjones/us-tooltip-map/blob/master/img/screenshot.png" alt="screenshot"/>
+</p>
 
 ## Examples in the wild
 
@@ -13,6 +15,7 @@ Build a US map with tooltips using data from a Google spreadsheet, complete with
 [Has Your State Outlawed Blowing the Whistle on Factory Farm Abuses?](http://www.motherjones.com/blue-marble/2013/06/ag-gag-laws-map)
 
 ## How it works 
+
 
 
 ## Set up your Google Spreadsheet
