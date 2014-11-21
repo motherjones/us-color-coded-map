@@ -1,4 +1,4 @@
-# A Google Spreadsheet-Powered SVG Map
+# A Google spreadsheet-powered map of the US
 
 Build a color-coded US map from a Google spreadsheet. Good for comparing state metrics or tracking state-level legislation. Here's an example:
 
@@ -18,29 +18,19 @@ Build a color-coded US map from a Google spreadsheet. Good for comparing state m
 
 *MoJo users: Before you get started, follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).*
 
-Each state gets a blurb with a title and deck, and a color based on which category it falls under. You'll customize all these elements in the ``index.html`` file and a Google Spreadsheet. We'll get into details below, but in brief, you'll follow these simple steps:
+Each state gets a blurb with a title and deck, and a color based on which category it falls under. All of the data lives in a google spreadsheet. Note that you can't do markers or individual dots on this map; it's for color-coding each state as a whole.
 
-* Modify the content in these columns in the spreadsheet template:
+##Modifying the spreadsheet
+
+Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and rename to fit your story. 
+
+*MoJo staffers: Move the copy into the relevant beat folder in the Mother Jones Google Drive. Change the owner of the spreadsheet to MoJo Data in `Share > Advanced`.*
+
+Here are the columns you'll be working with:
 
 |**abbr**|**headline**|**body**|**class**|
 |---|----|-----|----|
 |KS|Kansas|Voters approved a constitutional ban on same-sex marriage in 2005. It was already illegal under state law. A 2012 statute reiterated the state's ban on same-sex marriages. A lawsuit was filed in 2013 seeking state acknowledgement of out-of-state marriages for tax purposes. On November 4, 2014, a federal judge issued a prelimnary injuction against the enforcement of the state's ban. However, that injuction was stayed to allow Kansas time to appeal.|Limbo|
-
-## Set up your Google Spreadsheet
- 
-Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and rename to fit your story. Go to `File` and click on `Publish to the web,` then click on `Start publishing`. 
-
-A URL will appear. It will look something like this: 
-
-```
-https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html
-```
-
-Copy that link. This is your spreadsheet ID or url, which you will use to connect your spreadsheet to the map.
-
-*MoJo staffers: Move the copy into the relevant beat folder in the Mother Jones Google Drive. Change the owner of the spreadsheet to MoJo Data in `Share > Advanced`.*
-
-## Modifying the spreadsheet data
 
 * `abbr` : The abbreviation of the state you want to add a class or info box to (make sure your state column has abbreviated state names, not full names)
 
@@ -52,15 +42,22 @@ Copy that link. This is your spreadsheet ID or url, which you will use to connec
 
 It's best to keep your spreadsheet clean and limited to these four columns, but if you need, feel free to add additional columns for reference. They won't show up in the map, but they won't break it either.
 
+Once you've replaced the spreadsheet data with your own, go to `File` and click on `Publish to the web,` then click on `Start publishing`. 
+
+A URL will appear. It will look something like this: 
+```
+https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html
+```
+
+This is your spreadsheet ID or url, which you will later use to connect your spreadsheet to the map.
+
 ## Modify your project files
 
 *MoJo users: By now you should have a local copy of this project repository on your machine. If you don't, go back and follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).*
 
-**In your copy of index.html:**
+**In index.html:**
 
-In order to get your data showing up in the map, you'll need to edit a couple of lines of code in your index.html file. 
-
-* Paste the ID or url you just copied from your spreadsheet, in the place of `your_spreadsheet_url_here`. The code you are looking for in the index.html file looks like this:
+Paste the ID or url you just copied from your published spreadsheet in place of `your_spreadsheet_url_here`. The code you are looking for in the index.html file looks like this:
 
 ```
 <script>
@@ -72,7 +69,8 @@ In order to get your data showing up in the map, you'll need to edit a couple of
     })
 </script>
 ```
-* Next, replace the headline, deck, and legend with your story content. This is the code you're looking for:
+
+Next, replace the headline, deck, and legend with your story content. This is the code you're looking for:
 ```
     <h2>Where is Gay Marriage Legal in the US?</h2>
     <p>The most recent status of gay marriage, across the US. Latest state to legalize highlighted below. Click any state for details.</p>
@@ -87,7 +85,8 @@ In order to get your data showing up in the map, you'll need to edit a couple of
     <aside class="small text-muted">Source: Lambda Legal, Human Rights Campaign</aside>
     
 ```
-* Wherever you see a `class="Legal"`, also change `Legal`, etc to match your classes. They'll all be in this section:
+
+Modify the legend to match your new classes in this section:
 ```
 <ul class="list-inline">
 	<li><span class="Legal">tag</span> Legal</li>
@@ -96,11 +95,13 @@ In order to get your data showing up in the map, you'll need to edit a couple of
         <li><span class="Banned">tag</span> Banned</li>
 </ul>
 ```
-Save your changes. Open up index.html using a web browser and check that your data is showing up in the map container. When you make changes to the spreadsheet data, the map will automatically render those changes.
+Save your changes. Open up ``index.html`` in a web browser and check that your data is showing up correctly. Whenever you make changes to the spreadsheet data, the map will automatically render those changes.
 
-**In your copy of style.css:**
+**In style.css:**
 
-Make sure the categories you added to the `class` column match the .classes in your style.css file. `fill`, `background`, and `color` are CSS properties that assign each `class` its own color. Each of these properties should have a hex code (e.g. `#69A9C5`) that denotes the corresponding color for that CSS class. If you've added more than four categories, make sure you create new categories here accordingly, along with their `fill`, `background`, and `color`.
+Make sure the categories you added to the `class` column match the classes in your ``style.css`` file. `fill`, `background`, and `color` are CSS properties that assign each `class` its own color. Each of these properties should have a hex code (e.g. `#69A9C5`) that denotes the corresponding color for that CSS class. 
+
+If your spreadsheet has more than four classes, make sure you create new categories here accordingly, along with their `fill`, `background`, and `color`.
 
 ```
 /*  project-specific styles for map and legend */
@@ -127,7 +128,7 @@ Make sure the categories you added to the `class` column match the .classes in y
 ```
 **Important note about CSS for SVGs:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are `fill` instead of `background`, and `stroke` instead of `border`.
 
-Refresh index.html in the web browser and check that your data is still showing up in the map, colored properly, with new headlines, decks, and sources.
+Refresh `index.html` in the web browser and check that your data is still showing up in the map and colored properly.
 
 ## Stage the map (for MoJo users)
 
