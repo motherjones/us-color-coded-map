@@ -20,16 +20,16 @@ Build a US map with tooltips using data from a Google spreadsheet, complete with
 
 This map consists of a title, deck, legend, source line, svg map, and a tooltip view. You'll customize all elements in the index.html file, except for the svg map and tooltip, which you'll customize through the Google Spreadsheet. We'll get into details below, but in brief, you'll follow these simple steps:
 
-* Start with a spreadsheet with the following column headers, like so:
+* Start with a spreadsheet with the following column headers:
 
 |**abbr**|**headline**|**body**|**class**|
-|--|----|-----|----|
+|---|----|-----|----|
 |  |    |     |    |
 
-* Fill in each row with your details about each state, like so:
+* Add your details about each state in each row:
 
 |**abbr**|**headline**|**body**|**class**|
-|--|----|-----|----|
+|---|----|-----|----|
 |KS|Kansas|Voters approved a constitutional ban on same-sex marriage in 2005. It was already illegal under state law. A 2012 statute reiterated the state's ban on same-sex marriages. A lawsuit was filed in 2013 seeking state acknowledgement of out-of-state marriages for tax purposes. On November 4, 2014, a federal judge issued a prelimnary injuction against the enforcement of the state's ban. However, that injuction was stayed to allow Kansas time to appeal.|Limbo|
 
 * Customize the other elements of the map container by editing parts of your index.html file:
