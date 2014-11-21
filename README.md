@@ -16,65 +16,129 @@ Build a US map with tooltips using data from a Google spreadsheet, complete with
 
 ## How it works 
 
+*MoJo users:* Before you get started, follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).
 
+This map consists of a title, deck, legend, source line, svg map, and a tooltip view. You'll customize all elements in the index.html file, except for the svg map and tooltip, which you'll customize through the Google Spreadsheet. We'll get into details below, but in brief, you'll follow these simple steps:
 
-## Set up your Google Spreadsheet
+* Start with a spreadsheet with the following column headers, like so:
 
-Start a new Google Spreadsheet with the following column headers:
+|**abbr**|**headline**|**body**|**class**|
+|--|----|-----|----|
+|  |    |     |    |
 
-    abbr   headline   body   class
+* Fill in each row with your details about each state, like so:
 
-The columns we care about are as follows:
+|**abbr**|**headline**|**body**|**class**|
+|--|----|-----|----|
+|KS|Kansas|Voters approved a constitutional ban on same-sex marriage in 2005. It was already illegal under state law. A 2012 statute reiterated the state's ban on same-sex marriages. A lawsuit was filed in 2013 seeking state acknowledgement of out-of-state marriages for tax purposes. On November 4, 2014, a federal judge issued a prelimnary injuction against the enforcement of the state's ban. However, that injuction was stayed to allow Kansas time to appeal.|Limbo|
 
-* abbr : The abbreviation of the state you want to add a class or info box to (make sure your state column has abbreviated state names, not full names)
-
-* headline : The headline of your info box for that state, displayed under the map
-
-* body : The body of your info box for that state, displayed under the headline
-
-* class : the class you'd like attached to your state, for styling
-
-You can have other columns in there if you'd like. They won't show up in the map, but they won't break it either.
-
-In Google Docs, go up to the `File` menu and pick `Publish to the web`. Before publishing your map, double check that you are publishing the correct sheet in the "Sheets to Publish" drop down menu. Make sure there is only one worksheet powering your map. 
-
-Click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc&output=html`
-
-Copy the part between `key=` and `&`. This is your spreadsheet key.
-
-In the code snippet below, change the spreadsheet id (currently "YOUR KEY GOES HERE") to your Google spreadsheet key.
-
-[Demo spreadsheet](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html)
-
-### 2) Set up your html page
-
-If you're working locally and inside the super simple svg repo's directory, you can just paste the below code snippet into your web page, and replace 'YOUR KEY GOES HERE' with your spreadsheet key.
-
+* Customize the other elements of the map container by editing parts of your index.html file:
 ```
-<div id="map_container">
-    <div id="state_specific_area">
-    </div>
+<div class="container-fluid">  
+    <h2>Where is Gay Marriage Legal in the US?</h2>
+    <p>The most recent status of gay marriage, across the US. Latest state to legalize highlighted below. Click any state for details.</p>
+    <ul class="list-inline">
+        <li><span class="Legal">tag</span> Legal</li>
+        <li><span class="Appeal">tag</span> Ban struck down, appeal pending</li>
+        <li><span class="Challenged">tag</span> Banned, currently challenged in court</li>
+        <li><span class="Banned">tag</span> Banned</li>
+    </ul>
+    <aside class="small text-muted">Source: Lambda Legal, Human Rights Campaign</aside>
+    <section id="blurb"></section>  
 </div>
 
-<link href="css/style.css" rel="stylesheet" />
-<script src="libs/jquery.js"></script>
-<script src="libs/tabletop.js"></script>	
-<script src="js/map_snippet.js"></script>	
+<script src="js/jquery.js"></script>
+<script src="js/tabletop.js"></script>	
+<script type="text/javascript" src="http://assets.motherjones.com/interactives/plugins/pym.js/src/pym.js"></script>
+<script src="js/script.js"></script>	
 <script>
-    super_simple_map({
-      container: 'state_specific_area', //This should match  the id of the section up there
-      initial_state: 'CA', //if you want to have a state initially selected
-      //proxy: proxy here, //for a tabletop proxy, if you have one
+    us_map ({
+      container: 'blurb',
+      initial_state: 'CA',
+      //proxy: proxy here,
       key: 'https://docs.google.com/spreadsheet/pub?key=0Aq7nL59nLsCMdDJxZUo4cFZaWGF5d0pSZU9XSE44NVE&output=html',
     })
 </script>
 ```
 
-If you are working in a new directory, make sure the jQuery and tabletop links are pointing to the correct location.
+* Style the container to fit your data's story by editing parts of your style.css file:
+```
+/*  project-specific styles for map and legend */
+.Legal {	
+	fill:#69A9C5;
+    background:#69A9C5;
+    color: #69A9C5;
+}
+.Appeal {   
+    fill:#ABD9E9;
+    background:#ABD9E9;
+    color:#ABD9E9;
+}
+.Challenged {
+	fill: #F4A582;
+    background:#F4A582;
+    color:#F4A582;
+}
+.Banned { 
+    fill:#D6604D;
+    background:#D6604D;
+    color:#D6604D;
+}
+```
 
-Et voila! You have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes.
+## Set up your Google Spreadsheet
+ 
+Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and move the copy into the relevant beat folder in the Mother Jones Google Drive. Rename the spreadsheet as you see fit. Change the owner of the spreadsheet to MoJo Data in `Share > Advanced`.
 
-Now you can add some bells and whistles to the map and info boxes, such as color fills, hover states, and transitions.
+In order for the slider to be able to read your spreadsheet, you'll need to make your new spreadsheet public. Go to `File` and click on `Publish to the web,` then click on `Start publishing`. 
+
+A URL will appear. It will look something like this: 
+
+```
+https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html
+```
+
+Copy that link. This is your spreadsheet ID or url, which you will use to connect your spreadsheet to the map.
+
+## Formatting your spreadsheet data
+
+* `abbr` : The abbreviation of the state you want to add a class or info box to (make sure your state column has abbreviated state names, not full names)
+
+* `headline` : The headline of your info box for that state, displayed under the map
+
+* `body` : The body of your info box for that state, displayed under the headline
+
+* `class` : these should be single words that categorize each state, which will determine the color of each state shape and the boxes in the legend. In the demo, we have four categories under `class`: legal, appeal, challenged, banned. These classes 
+
+It's best to keep your spreadsheet clean and limited to these four columns, but if you need, feel free to add additional columns for reference (sources for each row's data, and so on). They won't show up in the map, they won't break it either.
+
+## Modify your project files
+
+*MoJo users:* By now you should have a local clone of this project repo on your machine. If you don't, go back and follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).
+
+**In your copy of index.html (required):**
+
+In order to get your data showing up in the slider, you'll need to edit a couple of lines of code in your index.html file. Paste the ID or url you just copied from your spreadsheet, and paste it in the place of public_spreadsheet_url. The code you are looking for in the index.html file looks like this:
+
+```
+
+$('#slideshow').slideshow('public_spreadsheet_url');
+
+```
+
+The code after your changes should look like this:
+
+```
+
+$('#slideshow').slideshow('0Arenb9rAosmbdG5GWHFXbWJlN1hTR2ZmN3lZMVZkOHc');
+
+```
+
+Save your changes. Open up index.html using a web browser and check that your data is showing up in the map container.
+
+Now you have a svg map hooked up to live data in a Google spreadsheet. When you make changes to the spreadsheet data, the map will automatically render those changes.
+
+Customize Add some bells and whistles to the map and tooltip box, such as color fill, hover states, and transitions.
 
 ## Style your Super Simple SVG Map
 
@@ -85,22 +149,9 @@ To color your state, open up the CSS file and make new classes based on the valu
 	fill:#7fbf7b;
 }
 
+**Important note about CSS for <svg>s:** Since the state shapes are formed by svg paths, in the CSS you'll need to use "fill" instead of "background", and "stroke" instead of "border", to add color.
 
-Since the states are svg paths, use "fill" instead of "background", and "stroke" instead of "border".
-
-Beyond that, the important parts are :
-
-* \#blurbHeadline : The headline that you pass in.
-
-* \#state_specific_body : The body that you pass in.
-
-* \#map_container path : all the states
-
-* .clickable : Every state that has information attached to it.  Consider making the cursor a pointer for these.
-
-* .selected : The state that was clicked on most recently, and the state who's headline and body you're currently displaying
-
-## Staging the prettylist (for MoJo users)
+## Staging the map (for MoJo users)
 
 *MoJo users:* When you're done, upload to s3 and embed in the shell [(follow this how to)](https://github.com/motherjones/story-tools#starting-a-new-project).
 
