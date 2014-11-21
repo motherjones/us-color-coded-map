@@ -49,15 +49,15 @@ path:hover, path:active {
     background:#69A9C5;
     color: #69A9C5;
 }
-.Appeal {
+.Appeal {   
+    fill:#ABD9E9;
+    background:#ABD9E9;
+    color:#ABD9E9;
+}
+.Chellenged {
 	fill: #F4A582;
     background:#F4A582;
     color:#F4A582;
-}
-.Challenged {	
-	fill:#ABD9E9;
-    background:#ABD9E9;
-    color:#ABD9E9;
 }
 .Banned { 
     fill:#D6604D;
