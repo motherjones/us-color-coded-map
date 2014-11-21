@@ -177,7 +177,7 @@ Make sure the categories you added to the `class` column matches the .classes in
     color:#D6604D;
 }
 ```
-**Important note about CSS for SVGs:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are "fill" instead of "background", and "stroke" instead of "border."
+**Important note about CSS for SVGs:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are `fill` instead of `background`, and `stroke` instead of `border`.
 
 Refresh index.html in the web browser and check that your data is still showing up in the map, colored properly, and has the new headline/deck/source.
 
