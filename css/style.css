@@ -49,17 +49,17 @@ path:hover, path:active {
     background:#69A9C5;
     color: #69A9C5;
 }
-.Banned {
+.Appeal {
 	fill: #F4A582;
     background:#F4A582;
     color:#F4A582;
 }
-.Limbo {	
+.Challenged {	
 	fill:#ABD9E9;
     background:#ABD9E9;
     color:#ABD9E9;
 }
-.Bannedstrong { 
+.Banned { 
     fill:#D6604D;
     background:#D6604D;
     color:#D6604D;
