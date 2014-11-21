@@ -18,7 +18,7 @@ Build a color-coded US map from a Google spreadsheet. Good for comparing state m
 
 *MoJo users: Before you get started, follow [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project).*
 
-Each state gets a blurb with a title and deck, and a color based on which category it falls under. All of the data lives in a google spreadsheet. Note that you can't do markers or individual dots on this map; it's for color-coding each state as a whole.
+Each state gets a blurb with a title and deck, and a color based on which category it falls under. All of the data lives in a Google spreadsheet. Note that you can't do markers or individual dots on this map; it's for color-coding each state as a whole.
 
 ##Modifying the spreadsheet
 
