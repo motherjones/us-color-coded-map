@@ -1,6 +1,6 @@
 # A Google Spreadsheet-Powered SVG Map
 
-Build a color-coded US map from a Google spreadsheet. This works well for stories comparing state metrics or tracking state-level legislation. Here's an example:
+Build a color-coded US map from a Google spreadsheet. Good for comparing state metrics or tracking state-level legislation. Here's an example:
 
 <p align="center">
   <img width="75%" src="https://github.com/motherjones/us-tooltip-map/blob/master/img/screenshot.png" alt="screenshot"/>
