@@ -20,6 +20,8 @@ Build a color-coded US map from a Google spreadsheet. Good for comparing state m
 
 Each state gets a blurb with a title and deck, and a color based on which category it falls under. All of the data lives in a Google spreadsheet. Note that you can't do markers or individual dots on this map; it's for color-coding each state as a whole.
 
+As for mobile, it works, but truthfully these types of maps suck on mobile. Ideally the map would turn into a color-coded table on mobile. We would love and and all pull requests along these lines.
+
 ##Modifying the spreadsheet
 
 Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and rename to fit your story. 
