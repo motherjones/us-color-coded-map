@@ -108,7 +108,7 @@ Copy that link. This is your spreadsheet ID or url, which you will use to connec
 
 * `body` : The details for that state, displayed under the headline. (**Pro tip:** Keep the body word count consistent across all states.)
 
-* `class` : Single words that categorize each state, which will determine the color of each state shape and the boxes in the legend. In the demo, we have four categories under `class`: legal, appeal, challenged, banned. These classes 
+* `class` : Single words that categorize each state, which will determine the color of each state shape and the boxes in the legend. In the demo, we have four categories under `class`: legal, appeal, challenged, banned. 
 
 It's best to keep your spreadsheet clean and limited to these four columns, but if you need, feel free to add additional columns for reference (sources for each row's data, and so on). They won't show up in the map, but they won't break it either.
 
@@ -120,7 +120,7 @@ It's best to keep your spreadsheet clean and limited to these four columns, but 
 
 In order to get your data showing up in the map, you'll need to edit a couple of lines of code in your index.html file. 
 
-* Paste the ID or url you just copied from your spreadsheet, and paste it in the place of `your_spreadsheet_url_here`. The code you are looking for in the index.html file looks like this:
+* Paste the ID or url you just copied from your spreadsheet, in the place of `your_spreadsheet_url_here`. The code you are looking for in the index.html file looks like this:
 
 ```
 <script>
@@ -152,7 +152,7 @@ Save your changes. Open up index.html using a web browser and check that your da
 
 **In your copy of style.css:**
 
-Make sure the categories you added to the `class` column matches the .classes in your style.css file. `fill`, `background`, and `color` are CSS properties that assign each class its own color. Each of these properties should have a hex code (e.g. #69A9C5) that denotes the corresponding color for that class. If you've added more than four categories, make sure you add them here as well, along with their `fill`, `background`, and `color`.
+Make sure the categories you added to the `class` column matches the .classes in your style.css file. `fill`, `background`, and `color` are CSS properties that assign each `class` its own color. Each of these properties should have a hex code (e.g. `#69A9C5`) that denotes the corresponding color for that CSS class. If you've added more than four categories, make sure you add them here as well, along with their `fill`, `background`, and `color`.
 
 ```
 /*  project-specific styles for map and legend */
@@ -177,7 +177,7 @@ Make sure the categories you added to the `class` column matches the .classes in
     color:#D6604D;
 }
 ```
-**Important note about CSS for <svg>s:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are "fill" instead of "background", and "stroke" instead of "border."
+**Important note about CSS for SVGs:** Since the state shapes are formed by svg paths, the CSS properties you'll need to use are "fill" instead of "background", and "stroke" instead of "border."
 
 Refresh index.html in the web browser and check that your data is still showing up in the map, colored properly, and has the new headline/deck/source.
 
