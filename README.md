@@ -148,6 +148,15 @@ In order to get your data showing up in the map, you'll need to edit a couple of
     
     <section id="blurb"></section>  
 ```
+* Wherever you see a `class="Legal"`, also change `Legal`, etc to match your classes. They'll all be in this section:
+```
+<ul class="list-inline">
+	<li><span class="Legal">tag</span> Legal</li>
+        <li><span class="Appeal">tag</span> Ban struck down, appeal pending</li>
+        <li><span class="Challenged">tag</span> Banned, currently challenged in court</li>
+        <li><span class="Banned">tag</span> Banned</li>
+</ul>
+```
 Save your changes. Open up index.html using a web browser and check that your data is showing up in the map container. When you make changes to the spreadsheet data, the map will automatically render those changes.
 
 **In your copy of style.css:**
