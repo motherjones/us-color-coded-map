@@ -24,7 +24,7 @@ As for mobile, it works, but truthfully these types of maps suck on mobile. Idea
 
 ##Modifying the spreadsheet
 
-Make a copy of [this template](https://docs.google.com/spreadsheet/pub?key=0Arenb9rAosmbdHc4MDVLcEl6bHFhczNKSzZUem1VYWc&output=html) and rename to fit your story. 
+Make a copy of [this template](https://docs.google.com/spreadsheets/d/1xiCxYhuBzV9jur9O8sq7ZabI-MIK8f15YD941LMIHwc/pubhtml?gid=0&single=true) and rename to fit your story. 
 
 *MoJo staffers: Move the copy into the relevant beat folder in the Mother Jones Google Drive. Change the owner of the spreadsheet to MoJo Data in `Share > Advanced`.*
 
